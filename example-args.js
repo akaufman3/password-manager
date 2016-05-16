@@ -1,5 +1,24 @@
 // parsing command line arguments to do something with them
-var argv = require('yargs').argv;
+// chaining methods and properties
+var argv = require('yargs')
+	.command('hello', 'Greets the user', function(yargs) {
+		yargs.options({
+			name: {
+				// requires input name
+				demand: true,
+				// alias is like a shortcut: node example-args.js hello -n Amelia
+				alias: 'n',
+				description: 'Your first name goes here'
+			},
+			lastname: {
+				demand: true,
+				alias: 'l',
+				description: 'Your last name goes here'
+			}
+		}).help('help');
+	})
+	.help('help')
+	.argv;
 var command = argv._[0];
 
 console.log(argv);
