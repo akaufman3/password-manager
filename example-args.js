@@ -8,7 +8,8 @@ var argv = require('yargs')
 				demand: true,
 				// alias is like a shortcut: node example-args.js hello -n Amelia
 				alias: 'n',
-				description: 'Your first name goes here'
+				description: 'Your first name goes here',
+				type: 'string'
 			},
 			lastname: {
 				demand: true,
